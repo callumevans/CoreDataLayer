@@ -22,7 +22,7 @@ build_script:
   - ps: dotnet pack --output './'
   
 artifacts:
-  - path: **\*.nupkg
+  - path: '*.nupkg'
     name: Nuget Spec
 
 version: 0.0.1.{build}
