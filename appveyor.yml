@@ -14,7 +14,7 @@ build_script:
   - ps: dotnet --info
 
   # Build
-  - ps: cd src
+  - ps: cd src\CoreDataLayer
   - ps: dotnet restore
   - ps: dotnet --verbose build
   
