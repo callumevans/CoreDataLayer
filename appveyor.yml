@@ -19,6 +19,6 @@ build_script:
   - ps: dotnet --verbose build
   
   # Pack
-  - ps: dotnet pack
+  - ps: dotnet pack --output './'
   
 version: 0.0.1.{build}
