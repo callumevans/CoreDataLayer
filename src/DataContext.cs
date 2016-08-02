@@ -16,7 +16,7 @@ namespace CoreDataLayer
             this.Connection = (DbConnection)Activator.CreateInstance(typeof(ConnectionType), connectionString);
         }
 
-        public IEnumerable<T> ExecuteReadProcedure<T>(string procedure, object parameters)
+        public IEnumerable<T> ExecuteReadProcedure<T>(string procedure, object parameters = null)
         {
             var inputs = new DynamicParameters();
 
@@ -29,7 +29,7 @@ namespace CoreDataLayer
             return results;
         }
 
-        public int ExecuteWriteProcedure(string procedure, object parameters)
+        public int ExecuteWriteProcedure(string procedure, object parameters = null)
         {
             var inputs = new DynamicParameters();
 
