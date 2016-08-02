@@ -25,4 +25,4 @@ artifacts:
   - path: '**\*.nupkg'
     name: Nuget Spec
 
-version: 0.0.1.{build}
+version: CI:{build}
