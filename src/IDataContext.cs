@@ -10,8 +10,12 @@ namespace CoreDataLayer
     {
         DbConnection Connection { get; }
 
+        IEnumerable<T> ExecuteReadProcedure<T>(string procedure, object parameters = null);
+
+        Task<IEnumerable<T>> ExecuteReadProcedureAsync<T>(string procedure, object parameters = null);
+
         int ExecuteWriteProcedure(string procedure, object parameters = null);
 
-        IEnumerable<T> ExecuteReadProcedure<T>(string procedure, object parameters = null);
+        Task<int> ExecuteWriteProcedureAsync(string procedure, object parameters = null);
     }
 }
