@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Threading.Tasks;
 
 namespace CoreDataLayer
 {
@@ -29,6 +30,19 @@ namespace CoreDataLayer
             return results;
         }
 
+        public async Task<IEnumerable<T>> ExecuteReadProcedureAsync<T>(string procedure, object parameters = null)
+        {
+            var inputs = new DynamicParameters();
+
+            if (parameters != null)
+            {
+                inputs.AddDynamicParams(parameters);
+            }
+
+            var results = await Connection.QueryAsync<T>(procedure, inputs, commandType: CommandType.StoredProcedure);
+            return results;
+        }
+
         public int ExecuteWriteProcedure(string procedure, object parameters = null)
         {
             var inputs = new DynamicParameters();
@@ -39,6 +53,19 @@ namespace CoreDataLayer
             }
 
             int index = Connection.Execute(procedure, inputs, commandType: CommandType.StoredProcedure);
+            return index;
+        }
+
+        public async Task<int> ExecuteWriteProcedureAsync(string procedure, object parameters = null)
+        {
+            var inputs = new DynamicParameters();
+
+            if (parameters != null)
+            {
+                inputs.AddDynamicParams(parameters);
+            }
+
+            int index = await Connection.ExecuteAsync(procedure, inputs, commandType: CommandType.StoredProcedure);
             return index;
         }
     }
