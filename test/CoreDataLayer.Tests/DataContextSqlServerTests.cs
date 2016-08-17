@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -25,6 +26,15 @@ namespace CoreDataLayer.Tests
         public void ConnectToMySql()
         {
             context = new DataContext<MySqlConnection>(@"Server=localhost;Database=TestDatabase;Uid=root;Pwd=Password12!;");
+
+            context.Connection.Open();
+            context.Connection.Close();
+        }
+
+        [Fact]
+        public void ConnectToPostgreSql()
+        {
+            context = new DataContext<NpgsqlConnection>(@"User ID=postgres;Password=Password12!;Host=localhost;Port=5432;Database=TestDatabase;");
 
             context.Connection.Open();
             context.Connection.Close();

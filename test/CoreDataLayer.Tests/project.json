@@ -18,6 +18,7 @@
         "xunit": "2.2.0-*",
         "Microsoft.Data.SQLite": "1.0.0-rc2-final",
         "MySqlConnector": "0.1.0-*",
+        "Npgsql": "3.1.7",
         "CoreDataLayer": "*"
       }
     }
