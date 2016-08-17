@@ -24,7 +24,7 @@ namespace CoreDataLayer.Tests
         [Fact]
         public void ConnectToMySql()
         {
-            context = new DataContext<MySqlConnection>(@"Server=localhost;Database=TestDatabase;Uid=root;Pwd=Password123!;");
+            context = new DataContext<MySqlConnection>(@"Server=localhost;Database=TestDatabase;Uid=root;Pwd=Password12!;");
 
             context.Connection.Open();
             context.Connection.Close();
