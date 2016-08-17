@@ -15,7 +15,7 @@ namespace CoreDataLayer.Tests
         [Fact]
         public void ConnectToSqlServer()
         {
-            context = new DataContext<SqlConnection>(@"Server=(local)\SQL2016;Database=master;User ID=sa;Password=Password123!");
+            context = new DataContext<SqlConnection>(@"Server=(local)\SQL2016;Database=master;User ID=sa;Password=Password12!");
 
             context.Connection.Open();
             context.Connection.Close();
