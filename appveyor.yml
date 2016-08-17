@@ -24,7 +24,7 @@ build_script:
   - ps: dotnet pack --output './'
 
 test_script:
-  - ps: cd ..\test
+  - ps: cd ..\..\test
   - ps: dotnet test
   
 artifacts:
