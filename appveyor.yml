@@ -1,5 +1,7 @@
 os: Visual Studio 2015
 
+services: mssql2016
+
 environment:
   matrix:
     - CLI_VERSION: Latest
@@ -14,12 +16,16 @@ build_script:
   - ps: dotnet --info
 
   # Build
-  - ps: cd src\CoreDataLayer
+  - ps: cd src/CoreDataLayer
   - ps: dotnet restore
   - ps: dotnet --verbose build
   
   # Pack
   - ps: dotnet pack --output './'
+
+test_script:
+  - ps cd ../test
+  - ps dotnet test
   
 artifacts:
   - path: '**\*.nupkg'
