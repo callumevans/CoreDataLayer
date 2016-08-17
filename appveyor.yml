@@ -1,7 +1,9 @@
 os: Visual Studio 2015
 
-services: mssql2016
-
+services: 
+  - mssql2016
+  - mysql
+  
 environment:
   matrix:
     - CLI_VERSION: Latest
@@ -25,6 +27,12 @@ build_script:
 
 test_script:
   - ps: cd ..\..\test\CoreDataLayer.Tests
+  
+  # Setup MySql
+  - ps: $env:MYSQL_PWD="Password12!"
+  - ps: $cmd = '"C:\Program Files\MySql\MySQL Server 5.7\bin\mysql" -e "create database TestDatabase;" --user=root'
+  - ps: iex "& $cmd"
+  
   - ps: dotnet restore
   - ps: dotnet test
   
