@@ -1,0 +1,22 @@
+﻿{
+  "testRunner": "xunit",
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.0"
+        },
+        "NETStandard.Library": "1.6.0",
+        "Dapper": "1.50.2",
+        "Moq": "4.6.25-*",
+        "dotnet-test-xunit": "2.2.0-*",
+        "xunit": "2.2.0-*",
+        "Microsoft.Data.SQLite": "1.0.0-rc2-final",
+        "CoreDataLayer": "*"
+      }
+    }
+  }
+}
