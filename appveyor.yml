@@ -37,7 +37,7 @@ test_script:
   # Setup Postgres
   - ps: SET PGUSER=postgres
   - ps: SET PGPASSWORD=Password12!
-  - ps: "& C:\Program Files\PostgreSQL\9.5\bin\" createdb TestDatabase
+  - ps: "& 'C:\Program Files\PostgreSQL\9.5\bin\' createdb TestDatabase"
   
   # Run tests
   
