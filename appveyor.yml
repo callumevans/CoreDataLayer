@@ -35,9 +35,10 @@ test_script:
   - ps: iex "& $cmd"
   
   # Setup Postgres
-  - ps: SET PGUSER=postgres
-  - ps: SET PGPASSWORD=Password12!
-  - ps: '"C:/Program Files/PostgreSQL/9.5/bin/psql.exe"' createdb TestDatabase
+  - SET PGUSER=postgres
+  - SET PGPASSWORD=Password12!
+  - PATH=C:\Program Files\PostgreSQL\9.3\bin\;%PATH%
+  - createdb TestDatabase
   
   # Run tests
   
