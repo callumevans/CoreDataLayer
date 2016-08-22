@@ -11,11 +11,10 @@ environment:
     
 install:
   # Download install script to install .NET cli in .dotnet dir
-  - $url = "https://dotnetcli.blob.core.windows.net/dotnet/preview/Binaries/$($env:CLI_VERSION)/dotnet-dev-win-x64.$($env:CLI_VERSION.ToLower()).zip"
-  - $env:Path = "$env:DOTNET_INSTALL_DIR;$env:Path"
+  - ps: $url = "https://dotnetcli.blob.core.windows.net/dotnet/preview/Binaries/$($env:CLI_VERSION)/dotnet-dev-win-x64.$($env:CLI_VERSION.ToLower()).zip"
+  - ps: $env:Path = "$env:DOTNET_INSTALL_DIR;$env:Path"
 
 build_script:
-  # dotnet info
   - dotnet --info
 
   # Build
@@ -30,9 +29,9 @@ test_script:
   - cd ..\..\test\CoreDataLayer.Tests
   
   # Setup MySql
-  - $env:MYSQL_PWD="Password12!"
-  - $cmd = '"C:\Program Files\MySql\MySQL Server 5.7\bin\mysql" -e "create database TestDatabase;" --user=root'
-  - iex "& $cmd"
+  - ps: $env:MYSQL_PWD="Password12!"
+  - ps: $cmd = '"C:\Program Files\MySql\MySQL Server 5.7\bin\mysql" -e "create database TestDatabase;" --user=root'
+  - ps: iex "& $cmd"
   
   # Setup Postgres
   - SET PGUSER=postgres
