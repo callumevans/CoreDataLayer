@@ -15,18 +15,18 @@ install:
   - ps: $env:Path = "$env:DOTNET_INSTALL_DIR;$env:Path"
 
 build_script:
-  - dotnet --info
+  - ps: dotnet --info
 
   # Build
-  - cd src\CoreDataLayer
-  - dotnet restore
-  - dotnet build
+  - ps: cd src\CoreDataLayer
+  - ps: dotnet restore
+  - ps: dotnet build
   
   # Pack
-  - dotnet pack --output './'
+  - ps: dotnet pack --output './'
 
 test_script:
-  - cd ..\..\test\CoreDataLayer.Tests
+  - ps: cd ..\..\test\CoreDataLayer.Tests
   
   # Setup MySql
   - ps: $env:MYSQL_PWD="Password12!"
@@ -41,8 +41,8 @@ test_script:
   
   # Run tests
   
-  - dotnet restore
-  - dotnet test
+  - ps: dotnet restore
+  - ps: dotnet test
   
 artifacts:
   - path: '**\*.nupkg'
