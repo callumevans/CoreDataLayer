@@ -68,15 +68,5 @@ namespace CoreDataLayer
             int index = await Connection.ExecuteAsync(procedure, inputs, commandType: CommandType.StoredProcedure);
             return index;
         }
-
-        public void ExecuteSql(string sql)
-        {
-            Connection.Execute(sql, commandType: CommandType.Text);
-        }
-
-        public async Task ExecuteSqlAsync(string sql)
-        {
-            await Connection.ExecuteAsync(sql, commandType: CommandType.Text);
-        }
     }
 }

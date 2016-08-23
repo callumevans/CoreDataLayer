@@ -71,6 +71,7 @@ namespace CoreDataLayer.Tests
 
         [Theory]
         [InlineData(@"User ID=postgres;Password=Password12!;Host=localhost;Port=5432;Database=INCORRECT;")]
+        [InlineData(@"User ID=postgres;Password=Password12!;Host=localhost;Port=1234;Database=TestDatabase;")]
         [InlineData(@"User ID=postgres;Password=Password12!;Host=INCORRECT;Port=5432;Database=TestDatabase;")]
         [InlineData(@"User ID=postgres;Password=INCORRECT;Host=localhost;Port=5432;Database=TestDatabase;")]
         [InlineData(@"User ID=INCORRECT;Password=Password12!;Host=localhost;Port=5432;Database=TestDatabase;")]
