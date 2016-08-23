@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CoreDataLayer", "src\CoreDataLayer\CoreDataLayer.xproj", "{BEDE5934-DC04-4635-9DCE-735C6E47340D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1DE146EE-26E3-4620-8643-8D55E4214FAC}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CoreDataLayer.Tests", "test\CoreDataLayer.Tests\CoreDataLayer.Tests.xproj", "{731A54D3-C3C2-4BD6-9BA6-A24513B5BCEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +26,16 @@ Global
 		{BEDE5934-DC04-4635-9DCE-735C6E47340D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEDE5934-DC04-4635-9DCE-735C6E47340D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEDE5934-DC04-4635-9DCE-735C6E47340D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{731A54D3-C3C2-4BD6-9BA6-A24513B5BCEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{731A54D3-C3C2-4BD6-9BA6-A24513B5BCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{731A54D3-C3C2-4BD6-9BA6-A24513B5BCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{731A54D3-C3C2-4BD6-9BA6-A24513B5BCEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BEDE5934-DC04-4635-9DCE-735C6E47340D} = {52F20654-0A0E-40FD-B200-0C6A1B7EAFFA}
+		{731A54D3-C3C2-4BD6-9BA6-A24513B5BCEF} = {1DE146EE-26E3-4620-8643-8D55E4214FAC}
 	EndGlobalSection
 EndGlobal
